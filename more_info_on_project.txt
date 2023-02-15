@@ -16,6 +16,13 @@ I have not used configuratin file at all, given the size of the project but all 
 port num where the app ll run. log file path, DB table name/details can be put inside confile file
 and the app can fetch from it instead of hardcoded way that is in the POC.
 
+
+File __init__.py -> contains the endpoints, logger configuration.
+File db.py -> contains the the db operations needed for the app to run. Initializing the db, creating tables, ingesting the data, and creating stats from the data.
+File handle_api.py -> contains the API operations needed to return the Response
+File schema.sql -> contains queries to create Tables
+
+
 In terms of deployment:
 I think you would spin up EC2 Instance in AWS, write AMI script to install Python and create virtual env that the app ll run.
 The Script ll install all the necessary libraries from requirements.txt and run the app.
