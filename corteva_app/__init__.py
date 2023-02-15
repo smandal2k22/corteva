@@ -42,10 +42,10 @@ def create_app(test_config=None):
         try:
             request_args = request.args
             date, station, page_num, page_size = '','',1, 10
-            date = request_args.get("date")
-            station = request_args.get("station")
-            page_num = request_args.get("page_num")
-            page_size = request_args.get("page_size")
+            if request_args.get("date"): date = request_args.get("date")
+            if request_args.get("station"): station = request_args.get("station")
+            if request_args.get("page_num"): page_num = request_args.get("page_num")
+            if request_args.get("page_size"): page_size = request_args.get("page_size")
             resp = handle_api.get_data(date, station, page_num, page_size, table = "WX_DATA")
             return Response(json.dumps(resp), 200, content_type='application/json')
         except Exception as e:
@@ -56,10 +56,10 @@ def create_app(test_config=None):
         try:
             request_args = request.args
             date, station, page_num, page_size = '','',1, 10
-            date = request_args.get("date")
-            station = request_args.get("station")
-            page_num = request_args.get("page_num")
-            page_size = request_args.get("page_size")
+            if request_args.get("date"): date = request_args.get("date")
+            if request_args.get("station"): station = request_args.get("station")
+            if request_args.get("page_num"): page_num = request_args.get("page_num")
+            if request_args.get("page_size"): page_size = request_args.get("page_size")
 
             resp = handle_api.get_data(date, station, page_num, page_size, table = "WX_STATS")
             return Response(json.dumps(resp), 200, content_type='application/json')

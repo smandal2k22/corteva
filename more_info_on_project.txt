@@ -1,0 +1,23 @@
+I have used Python Flask Framework to spin up a POC app for the project.
+This project requires pandas package (external) to manipulate the text data and insert into the DB.
+I could have used Python in-built file read/write operations to read the data and insert into DB.
+
+The DB I have used is sqlite, for it being easiest to work with for POCs in my opinion.
+
+Additional things I want to add is ->
+The APIs that I have created can take 4 params
+    date
+    station -> I used txt file name as station
+    page_num, page_size for pagination purposes
+
+I could have achieved both endpoints working on same one to avoid code duplucation but I did it the otherway as mentioned in the test.
+
+I have not used configuratin file at all, given the size of the project but all the DB details, Basic Auth details for the APIs,
+port num where the app ll run. log file path, DB table name/details can be put inside confile file
+and the app can fetch from it instead of hardcoded way that is in the POC.
+
+In terms of deployment:
+I think you would spin up EC2 Instance in AWS, write AMI script to install Python and create virtual env that the app ll run.
+The Script ll install all the necessary libraries from requirements.txt and run the app.
+We could introduce some keepalive endpoint just to check if the app is running or not, and in case of not running, auto-scale could spin up new instance.
+
