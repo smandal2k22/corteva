@@ -14,6 +14,11 @@ Activate the virtual env
  
  
  Clone this repo
+ 
+ cd into the corteva folder
+you should see the corteva_app folder and other files now.
+  
+  
  Install all the required Python libraries
 
   pip install -r requirementstxt
